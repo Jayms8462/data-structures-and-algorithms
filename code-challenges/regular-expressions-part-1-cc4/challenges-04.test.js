@@ -84,8 +84,9 @@ The expected output of "Hello, and have a wonderful day!" is ["and ", "have ", "
 ------------------------------------------------------------------------------------------------ */
 
 const noPunctuation = str => {
-  // Solution code here...
-};
+  let reg = /\w*[^:"-.:]\s/g;
+  return str.match(/\w*[^:"-.:]\s/g);
+  };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -200,7 +201,7 @@ describe('Testing challenge 5', () => {
     expect(noPunctuation('Given by our hand in the meadow that is called Runnymede, between Windsor and Staines, on the fifteenth day of June in the seventeenth year of our reign (i.e. 1215: the new regnal year began on 28 May).')).toEqual(expect.arrayContaining(['Given ', 'by ', 'our ', 'hand ', 'in ', 'the ', 'meadow ', 'that ', 'is ', 'called ', 'between ', 'Windsor ', 'and ', 'on ', 'the ', 'fifteenth ', 'day ', 'of ', 'June ', 'in ', 'the ', 'seventeenth ', 'year ', 'of ', 'our ', 'reign ', 'the ', 'new ', 'regnal ', 'year ', 'began ', 'on ', '28 ']));
   });
 
-  test('It should not contain words that are followed by any non-space character', () => {
+  test('It should not co ntain words that are followedby any non-space character', () => {
     expect(noPunctuation(lorem)).not.toContain(['amet,', 'elit.', 'egestas.', 'elit,', 'sed.', 'sem,', 'diam.', 'nibh.', 'porttitor.', 'euismod,', 'ultrices.', 'massa,', 'vel,', 'purus.', 'purus,', 'odio.', 'aliquet,', 'non,', 'sem.']);
   });
 });
