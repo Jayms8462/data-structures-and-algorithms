@@ -9,6 +9,7 @@ For example, oddValues([1,2,3]) returns [1,3].
 ------------------------------------------------------------------------------------------------ */
 
 const oddValues = (arr) => {
+  // eslint-disable-next-line no-global-assign
   return test = arr.filter((num) => num % 2 === 1);
 };
 
@@ -87,7 +88,7 @@ const getBaseStatGreaterThan = (arr, minBaseStat) => {
   return arr.filter(a => {
     if (a.baseStat > minBaseStat){
       return true;
-    };
+    }
   });
 };
 
@@ -103,7 +104,7 @@ const getStatName = (arr, minBaseStat) => {
   let test = arr.filter(a => {
     if (a.baseStat > minBaseStat){
       return true;
-    };
+    }
   });
   return test.map(test => test.stat.name);
 };
@@ -158,7 +159,7 @@ const characters = [
 ];
 
 const getCharactersWithoutChildren = (arr) => {
-  return arr.filter(test => !test.children);
+  return arr.filter(value => !value.children)
 };
 
 /* ------------------------------------------------------------------------------------------------
